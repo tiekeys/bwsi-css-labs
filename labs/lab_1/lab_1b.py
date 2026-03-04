@@ -52,6 +52,20 @@ def request_sanitized_number(prompt: str) -> float:
             print("Invalid input. A valid number must be entered.")
 
 
+def request_sanitized_operator(prompt: str) -> str:
+    """
+    Function to retrieve a string from the input, checking to see if it is a valid operator.
+
+    If not, an exception is raised. Otherwise the function returns the input as a string.
+    """
+    while True:
+        operator = str(input(prompt)).strip().lower()
+        if(operator in "add subtract multiply divide".split()):
+            return operator
+        else:
+            print("Invalid operator. A valid operator must be entered.")
+
+
 def main():
     
     print(f"===== Simple Calculator =====")
@@ -59,15 +73,11 @@ def main():
     # Ask the user for sample input    
     num1 = request_sanitized_number("What is the first number?: ")
     num2 = request_sanitized_number("What is the second number?: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = request_sanitized_operator("Enter the operation (add, subtract, multiply, divide): ")
 
-    if(operation not in "add multiply divide subtract".split()):
-        print(f"The operation: {operation} is invalid.")
-    else:
-        
     # Perform the calculation and display the result
-        result = simple_calculator(operation, num1, num2)
-        print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    result = simple_calculator(operation, num1, num2)
+    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
 
 
 if __name__ == "__main__":
