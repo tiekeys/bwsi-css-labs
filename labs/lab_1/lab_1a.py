@@ -6,7 +6,6 @@ with your name. Then, save the code, add it to the staging area, and commit it t
 
 This is to simulate a change made on a robot: robot_speed = 5 # m/s
 
-test for last question
 """
 
 def main():
