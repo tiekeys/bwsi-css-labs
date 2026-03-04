@@ -64,6 +64,7 @@ def main():
     if(operation not in "add multiply divide subtract".split()):
         print(f"The operation: {operation} is invalid.")
     else:
+        
     # Perform the calculation and display the result
         result = simple_calculator(operation, num1, num2)
         print(f"The result of {operation}ing {num1} and {num2} is: {result}")
