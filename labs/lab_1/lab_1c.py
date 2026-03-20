@@ -22,12 +22,31 @@ def max_subarray_sum(nums: list[int]) -> int:
 
     max_current = max_global = nums[0]
     
-    for num in nums:
-        max_current = max(num, max_current + num)
-        if max_current < max_global:
-            max_global = max_current
-            
+"""
+TODO: implement function
+
+for every index where number is nums[index]
+    if the number is the first index:
+        add the next index
+        if it is bigger than max, continue and set max_global to it
+        else break
+    if the number is the last index:
+        add the index before
+        if it is bigger than max, continue and set max_global to it
+        else break
+    if the number is the middle index:
+        for dir in [-1, 1]:
+            int current_displacement = 1
+            try:
+                next_num = nums[index + current_displacement * dir]
+                max_current = max of max_current and number + next_num
+                continue by current_displacement++
+            else:
+                max_global = max(max_current, max_global)
+                break
+    
     return max_global
+"""    
 
 # Example usage:
 def main():
