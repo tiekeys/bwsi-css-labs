@@ -21,7 +21,7 @@ def max_subarray_sum(nums: list[int]) -> int:
     """
 
     max_current = max_global = nums[0]
-    length = len(nums)
+    length = len(nums)  
 
     #Iterate through each number while keeping track of its index
     for index, number in enumerate(nums):
