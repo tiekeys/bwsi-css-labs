@@ -20,22 +20,20 @@ def max_subarray_sum(nums: list[int]) -> int:
         int: The maximum sum of any contiguous subarray.
     """
 
-    max_global = nums[0]
+    max_current = max_global = nums[0]
     length = len(nums)
 
-    for index in range(length):
-        
-        if(index == 0):
-            pass
-        elif(index == list.len(nums) - 1):
-            pass
-        else:
-            pass
-        
-        return max_global
+    #Iterate through each number while keeping track of its index
+    for index, number in enumerate(nums):
+        if(index != 0):                                     #skipping the first element
+            max_current = max(number, number + max_current) 
+            if(max_current > max_global):                   #update the maximum
+                max_global = max_current
+    return max_global
 
 # Example usage:
 def main():
+
 
     nums = [-2,1,-3,4,-1,2,1,-5,4]
     result = max_subarray_sum(nums)
