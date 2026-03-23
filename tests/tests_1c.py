@@ -1,7 +1,7 @@
 """
 tests_1c.py
 
-This module contains unit tests for the simple_calculator function defined in lab_1b.py.
+This module contains unit tests for the max_subarray_sum function defined in lab_1c.py.
 """
 
 import pytest
